@@ -1,9 +1,12 @@
 import PyPDF4, os
 
-pdf_files = []
-for filename in os.listdir("."):
-    if filename.endswith(".pdf"):
-        pdf_files.append(filename)
-pdf_files.sort(key=str.lower)
+files = []
+for file in os.listdir("."):
+    if file.endswith(".pdf"):
+        files.append(file)
+files.sort(key=str.lower)
 pdf_writer = PyPDF4.PdfFileWriter()
-print(pdf_files)
+print(files)
+for file in files:
+    file_obj = open(file, "rb")
+    pdf_reader = PyPDF4.PdfFileReader(file_obj)
