@@ -1,4 +1,6 @@
-import PyPDF4, os
+import os
+import PyPDF4
+
 
 files = []
 
