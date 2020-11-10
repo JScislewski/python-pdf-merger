@@ -10,3 +10,6 @@ print(files)
 for file in files:
     file_obj = open(file, "rb")
     pdf_reader = PyPDF4.PdfFileReader(file_obj)
+    for page in pdf_reader.numPages:
+        page_obj = pdf_reader.getPage(page)
+        pdf_writer.add(page_obj)
